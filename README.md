@@ -6,6 +6,9 @@ This project implements a deep learning-based approach to optimize router placem
 
 The goal is to predict optimal router positions to maximize signal coverage and performance in indoor environments using advanced deep learning models, including Bidirectional LSTM, GRU, LSTM with Attention, and Conv1D + Bidirectional LSTM. The project leverages two datasets: a reference dataset from literature and a real-world dataset collected in a controlled lab environment.
 
+## Thesis Project Report
+- **Report Link** : https://drive.google.com/file/d/1B_xsJGdpMvaEudf_HR36pxxOvtLpNG_x/view?usp=sharing
+
 ## Features
 - **Deep Learning Models**: Implements Bidirectional LSTM, GRU, LSTM with Attention, and Conv1D + Bidirectional LSTM for RSSI-based localization.
 - **Datasets**:
