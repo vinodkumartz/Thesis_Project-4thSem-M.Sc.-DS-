@@ -119,4 +119,5 @@ Contributions are welcome! Please submit a pull request or open an issue for sug
 This project is licensed under the MIT License.
 
 ## Contact
-For inquiries, contact Vinod Kumar (MSD23022) at Indian Institute of Information Technology, Lucknow.
+For inquiries, contact Vinod Kumar  at Indian Institute of Information Technology, Lucknow.
+- Eamil : imvinodkumarr@gmail.com
