@@ -9,6 +9,33 @@ The goal is to predict optimal router positions to maximize signal coverage and 
 ## Thesis Project Report
 - **Report Link** : https://drive.google.com/file/d/1B_xsJGdpMvaEudf_HR36pxxOvtLpNG_x/view?usp=sharing
 
+## Abstract
+Accurate localization of devices in indoor environments remains a challenging problem
+due to signal fluctuations caused by obstacles and dynamic movement of nodes (e.g., cus-
+tomer devices). The present study builds on existing work focused on optimizing router
+placement in Wi-Fi networks using Received Signal Strength Indicator (RSSI) values. In
+previous studies that utilized an improved RNN with LSTM layers for spatial analysis,
+these methods have limitations in a single model without exploring broader deep learning
+alternatives.
+In the present study, the reference work is extended by experimenting with a diverse
+range of advanced deep learning models on the same WiFi RSS fingerprint dataset. We
+evaluated multiple architectures, including CNN, Bidirectional LSTM, Stacked LSTM,
+GRU, LSTM with Attention, Conv1D-LSTM, Temporal Convolutional Networks (TCN),
+and Transformer networks. In the present investigation, an optimum accuracy of 97.44%
+is achieved by incorporating the LSTM with Attention, Bi-LSTM models, also providing
+highly accurate results. The present study demonstrates improved results to the original
+model(improved RNN), demonstrating better adaptability to spatial and temporal varia-
+tions in indoor signal propagation.
+To validate the robustness of the proposed methodology, a new dataset was collected
+following a standardized data collection process derived from the literature survey. The
+same set of deep learning models was trained on this dataset and observed consistent per-
+formance improvements, with GRU and LSTM-Attention models achieving up to 98.63%
+accuracy, along with high precision, recall, and F1 scores.
+Overall, our research introduces a more comprehensive and comparative deep learning
+models. This work can assist network engineers and homeowners in designing efficient
+Wi-Fi layouts while contributing to the field of spatial signal modeling and wireless net-
+work optimization.
+
 ## Features
 - **Deep Learning Models**: Implements Bidirectional LSTM, GRU, LSTM with Attention, and Conv1D + Bidirectional LSTM for RSSI-based localization.
 - **Datasets**:
@@ -80,15 +107,6 @@ The goal is to predict optimal router positions to maximize signal coverage and 
   - RSSI normalized to [0, 1] using Min-Max scaling.
   - Data reshaped for model input (e.g., (samples, timesteps, features)).
 
-## Results
-- **Reference Dataset**:
-  - Bidirectional LSTM and LSTM with Attention: 97.44% accuracy, 0.99 F1-score.
-  - Outperforms baseline Improved RNN (93.25% accuracy).
-- **Real-World Dataset**:
-  - GRU and LSTM with Attention: 98.63% accuracy, 0.99 F1-score.
-  - Conv1D + Bi-LSTM and Bi-LSTM: 95.89% accuracy.
-- **External Test Set**: Accurate coordinate predictions, with GRU and LSTM with Attention showing robust generalization.
-
 ## Project Structure
 ```
 ├── data/
@@ -109,6 +127,55 @@ The goal is to predict optimal router positions to maximize signal coverage and 
 ├── requirements.txt
 ├── README.md
 ```
+
+## Results
+- **Reference Dataset**:
+  - Bidirectional LSTM and LSTM with Attention: 97.44% accuracy, 0.99 F1-score.
+  - Outperforms baseline Improved RNN (93.25% accuracy).
+- **Real-World Dataset**:
+  - GRU and LSTM with Attention: 98.63% accuracy, 0.99 F1-score.
+  - Conv1D + Bi-LSTM and Bi-LSTM: 95.89% accuracy.
+- **External Test Set**: Accurate coordinate predictions, with GRU and LSTM with Attention showing robust generalization.
+
+## Conclusion 
+This research investigated the use of advanced deep learning models for indoor localiza-
+tion and optimal router placement based on Wi-Fi RSSI data. Deep learning architectures
+were implemented and evaluated using both a publicly available reference dataset and a
+collected real-world dataset in a laboratory environment. The experimental results pro-
+vide important insights into the effectiveness and adaptability of various models under
+different data conditions.
+On the reference dataset, the Bidirectional LSTM and LSTM with Attention mod-
+els achieved the highest performance, with each reaching an accuracy of 97.44% and F1
+scores of 0.99. These outcomes represent a notable improvement compared to the base-
+line Improved RNN, which recorded 93.25% accuracy. The findings highlight the advan-
+tages of integrating bidirectional processing and attention mechanisms, which enhance the
+model’s ability to capture spatial dependencies and accurately determine optimal router
+placements.
+On the real-world collected dataset, the GRU and LSTM with Attention models
+achieved the highest performance, each reaching an accuracy of 98.63% and F1 scores
+close to 1.00. These models exhibited a notable improvement over the baseline Improved
+RNN, which recorded an accuracy of 93.25%. The findings highlight the effectiveness
+of temporal sequence learning in GRU and the attention mechanism’s ability to enhance
+focus on relevant features, enabling robust prediction even under complex indoor condi-
+tions.
+In summary, the advanced deep learning architectures—namely GRU, Bidirec-
+tional LSTM, and LSTM with Attention—consistently demonstrated superior perfor-
+mance compared to the Improved RNN across both the reference and real-world datasets.
+Their strong generalization on structured data and robustness under real-world variability
+highlight their effectiveness for deployment in smart indoor environments. These models
+present viable solutions for key applications such as router positioning, signal enhance-
+ment, and user localization, paving the way for more efficient and intelligent wireless
+network systems.
+Despite these achievements, there remain some research gaps and opportunities for
+future work. The current study assumes a static environment without accounting for dy-
+namic elements like moving objects, people, or changing layouts, which can influence sig-
+39nal propagation. Additionally, the dataset size—especially the real-world samples—was
+relatively small, which may limit generalizability to larger-scale environments. Future re-
+search could experiment with the integration of reinforcement learning for adaptive router
+repositioning, expand the dataset with more spatial diversity, and investigate hybrid mod-
+els combining deep learning with physical signal propagation models. Real-time imple-
+mentation and deployment in live environments would also validate the feasibility of these
+models beyond offline simulations.
 
 ## Contributing
 Contributions are welcome! Please submit a pull request or open an issue for suggestions or bug reports.
